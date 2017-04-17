@@ -1,5 +1,8 @@
 *.hi
 *.o
 cabal*
-.cabal*
+*.cabal*
 .hindent.yaml
+dist
+LICENSE
+ChangeLog.md

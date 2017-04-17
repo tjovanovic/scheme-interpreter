@@ -1,7 +1,6 @@
 module Parser where
 
 import Control.Monad
-import System.Environment
 import Text.ParserCombinators.Parsec hiding (spaces)
 import DataType
 
@@ -64,8 +63,3 @@ readExpr input =
     case parse parseExpr "lisp" input of
         Left err -> "No match: " ++ show err
         Right _ -> "Found value"
-
-main :: IO ()
-main = do
-    (expr:_) <- getArgs
-    putStrLn (readExpr expr)
