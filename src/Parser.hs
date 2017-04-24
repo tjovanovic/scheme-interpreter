@@ -1,6 +1,5 @@
 module Parser where
 
-import Control.Monad
 import Text.ParserCombinators.Parsec hiding (spaces)
 import DataType
 
@@ -58,8 +57,3 @@ parseExpr = parseAtom
          char ')'
          return x
 
-readExpr :: String -> String
-readExpr input =
-    case parse parseExpr "lisp" input of
-        Left err -> "No match: " ++ show err
-        Right _ -> "Found value"
